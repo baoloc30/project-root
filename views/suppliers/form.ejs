@@ -1,0 +1,15 @@
+<div class="form-box">
+  <h3><%= supplier ? "Sửa nhà cung cấp" : "Thêm nhà cung cấp" %></h3>
+  <form method="post" action="<%= supplier ? '/suppliers/' + supplier._id + '/edit' : '/suppliers/create' %>">
+    <label for="name">Tên nhà cung cấp</label>
+    <input type="text" id="name" name="name" value="<%= supplier ? supplier.name : '' %>" required>
+
+    <label for="address">Địa chỉ</label>
+    <input type="text" id="address" name="address" value="<%= supplier ? supplier.address : '' %>" required>
+
+    <label for="phone">Số điện thoại</label>
+    <input type="text" id="phone" name="phone" value="<%= supplier ? supplier.phone : '' %>" required>
+
+    <button type="submit"><%= supplier ? "Cập nhật" : "Lưu" %></button>
+  </form>
+</div>

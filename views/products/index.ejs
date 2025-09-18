@@ -1,0 +1,32 @@
+
+
+<h2>Quản lý sản phẩm</h2>
+<a href="/products/new">+ Thêm sản phẩm</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tên</th>
+      <th>Giá</th>
+      <th>Số lượng</th>
+      <th>Nhà cung cấp</th>
+      <th>Thao tác</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% products.forEach(p => { %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.price %> đ</td>
+        <td><%= p.quantity %></td>
+        <td><%= p.supplier ? p.supplier.name : '' %></td>
+        <td>
+          <a href="/products/<%= p._id %>/edit">Sửa</a> | 
+          <form action="/products/<%= p._id %>/delete" method="post" style="display:inline">
+            <button type="submit" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>

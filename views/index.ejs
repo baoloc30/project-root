@@ -1,0 +1,30 @@
+
+<h2>Danh sách sản phẩm</h2>
+
+<form method="get" action="/">
+  <input type="text" name="search" placeholder="Tìm sản phẩm..." value="<%= query.search || '' %>">
+  <select name="supplier">
+    <option value="">-- Tất cả nhà cung cấp --</option>
+    <% suppliers.forEach(s => { %>
+      <option value="<%= s._id %>" <%= query.supplier == s._id ? 'selected' : '' %>><%= s.name %></option>
+    <% }) %>
+  </select>
+  <button type="submit">Lọc</button>
+</form>
+
+<table border="1" cellpadding="5">
+  <tr>
+    <th>Tên</th>
+    <th>Giá</th>
+    <th>Số lượng</th>
+    <th>Nhà cung cấp</th>
+  </tr>
+  <% products.forEach(p => { %>
+    <tr>
+      <td><%= p.name %></td>
+      <td><%= p.price %></td>
+      <td><%= p.quantity %></td>
+      <td><%= p.supplier?.name || "" %></td>
+    </tr>
+  <% }) %>
+</table>

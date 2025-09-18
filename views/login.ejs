@@ -1,0 +1,25 @@
+<div class="form-box">
+  <h3>Đăng nhập</h3>
+
+  <% if (typeof error !== 'undefined') { %>
+    <p style="color:red"><%= error %></p>
+  <% } %>
+  <% if (typeof message !== 'undefined') { %>
+    <p style="color:green"><%= message %></p>
+  <% } %>
+
+  <form method="post" action="/auth/login">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Đăng nhập</button>
+  </form>
+
+  <p>
+    <a href="/auth/register">Chưa có tài khoản? Đăng ký</a><br>
+    <a href="/auth/forgot">Quên mật khẩu?</a>
+  </p>
+</div>

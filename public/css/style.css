@@ -1,0 +1,144 @@
+/* Reset cơ bản */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Container chính */
+.container {
+  width: 80%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+/* Header */
+header h1 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+nav {
+  margin: 10px 0;
+}
+
+nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #3498db;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #1abc9c;
+}
+
+/* Main */
+main h2 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+form input, form select, form button {
+  margin: 5px 0;
+  padding: 8px;
+  font-size: 14px;
+}
+
+form button {
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #1abc9c;
+}
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #777;
+  font-size: 13px;
+}
+/* Bảng dữ liệu */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #3498db;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #eaf5ff;
+}
+/* Form container */
+.form-box {
+  background: #fdfdfd;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.form-box h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.form-box label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.form-box input, 
+.form-box select, 
+.form-box textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-box button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #3498db;
+  border: none;
+  color: white;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-box button:hover {
+  background: #1abc9c;
+}

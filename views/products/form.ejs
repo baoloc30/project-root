@@ -1,0 +1,25 @@
+<div class="form-box">
+  <h3><%= product ? "Sửa sản phẩm" : "Thêm sản phẩm" %></h3>
+  <form method="post" action="<%= product ? '/products/' + product._id + '/edit' : '/products/create' %>">
+    <label for="name">Tên sản phẩm</label>
+    <input type="text" id="name" name="name" value="<%= product ? product.name : '' %>" required>
+
+    <label for="price">Giá</label>
+    <input type="number" id="price" name="price" value="<%= product ? product.price : '' %>" required>
+
+    <label for="quantity">Số lượng</label>
+    <input type="number" id="quantity" name="quantity" value="<%= product ? product.quantity : '' %>" required>
+
+    <label for="supplier">Nhà cung cấp</label>
+    <select id="supplier" name="supplier">
+      <% suppliers.forEach(s => { %>
+        <option value="<%= s._id %>" 
+          <%= (product && product.supplier && product.supplier._id.toString() === s._id.toString()) ? 'selected' : '' %>>
+          <%= s.name %>
+        </option>
+      <% }) %>
+    </select>
+
+    <button type="submit"><%= product ? "Cập nhật" : "Lưu" %></button>
+  </form>
+</div>

@@ -1,0 +1,30 @@
+
+
+<h2>Quản lý nhà cung cấp</h2>
+<a href="/suppliers/new">+ Thêm nhà cung cấp</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tên</th>
+      <th>Địa chỉ</th>
+      <th>SĐT</th>
+      <th>Thao tác</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% suppliers.forEach(s => { %>
+      <tr>
+        <td><%= s.name %></td>
+        <td><%= s.address %></td>
+        <td><%= s.phone %></td>
+        <td>
+          <a href="/suppliers/<%= s._id %>/edit">Sửa</a> | 
+          <form action="/suppliers/<%= s._id %>/delete" method="post" style="display:inline">
+            <button type="submit" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
