@@ -22,9 +22,7 @@
         <td><%= p.supplier ? p.supplier.name : '' %></td>
         <td>
           <a href="/products/<%= p._id %>/edit">Sửa</a> | 
-          <form action="/products/<%= p._id %>/delete" method="post" style="display:inline">
-            <button type="submit" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</button>
-          </form>
+          <a href="/products/<%= p._id %>/delete" onclick="return confirm('Xóa sản phẩm này?')">Xóa</a>
         </td>
       </tr>
     <% }) %>

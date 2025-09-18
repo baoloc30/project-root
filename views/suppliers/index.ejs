@@ -20,9 +20,7 @@
         <td><%= s.phone %></td>
         <td>
           <a href="/suppliers/<%= s._id %>/edit">Sửa</a> | 
-          <form action="/suppliers/<%= s._id %>/delete" method="post" style="display:inline">
-            <button type="submit" onclick="return confirm('Bạn có chắc muốn xóa?')">Xóa</button>
-          </form>
+          <a href="/suppliers/<%= s._id %>/delete" onclick="return confirm('Xóa nhà cung cấp này?')">Xóa</a>
         </td>
       </tr>
     <% }) %>

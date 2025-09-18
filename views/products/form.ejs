@@ -1,25 +1,24 @@
 <div class="form-box">
-  <h3><%= product ? "Sửa sản phẩm" : "Thêm sản phẩm" %></h3>
-  <form method="post" action="<%= product ? '/products/' + product._id + '/edit' : '/products/create' %>">
-    <label for="name">Tên sản phẩm</label>
-    <input type="text" id="name" name="name" value="<%= product ? product.name : '' %>" required>
+  <h2><%= product._id ? "Sửa sản phẩm" : "Thêm sản phẩm" %></h2>
 
-    <label for="price">Giá</label>
-    <input type="number" id="price" name="price" value="<%= product ? product.price : '' %>" required>
+  <form method="post" action="<%= product._id ? '/products/' + product._id + '/edit' : '/products/new' %>">
+    <label>Tên sản phẩm:</label>
+    <input type="text" name="name" value="<%= product.name || '' %>" required><br>
 
-    <label for="quantity">Số lượng</label>
-    <input type="number" id="quantity" name="quantity" value="<%= product ? product.quantity : '' %>" required>
+    <label>Giá:</label>
+    <input type="number" name="price" value="<%= product.price || '' %>" required><br>
 
-    <label for="supplier">Nhà cung cấp</label>
-    <select id="supplier" name="supplier">
+    <label>Số lượng:</label>
+    <input type="number" name="quantity" value="<%= product.quantity || '' %>" required><br>
+
+    <label>Nhà cung cấp:</label>
+    <select name="supplier" required>
       <% suppliers.forEach(s => { %>
-        <option value="<%= s._id %>" 
-          <%= (product && product.supplier && product.supplier._id.toString() === s._id.toString()) ? 'selected' : '' %>>
-          <%= s.name %>
-        </option>
+        <option value="<%= s._id %>" <%= product.supplier == s._id ? 'selected' : '' %>><%= s.name %></option>
       <% }) %>
-    </select>
+    </select><br>
 
-    <button type="submit"><%= product ? "Cập nhật" : "Lưu" %></button>
+    <button type="submit">Lưu</button>
   </form>
+
 </div>
